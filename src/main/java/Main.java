@@ -1,4 +1,5 @@
 import Tokens.Token;
+import Visitors.CalcVisitor;
 import Visitors.ParserVisitor;
 import Visitors.PrintVisitor;
 import tokenizer.Tokenizer;
@@ -21,11 +22,17 @@ public class Main {
                 token.accept(parserVisitor);
             }
             ArrayList<Token> rpn = parserVisitor.getResult();
+
             PrintVisitor printVisitor = new PrintVisitor();
+            CalcVisitor calcVisitor = new CalcVisitor();
+
             for (Token token : rpn) {
                 token.accept(printVisitor);
+                token.accept(calcVisitor);
             }
             System.out.println();
+
+            System.out.println(calcVisitor.extractResult());
         } catch (IOException | RuntimeException ex) {
             System.out.println(ex);
         }
