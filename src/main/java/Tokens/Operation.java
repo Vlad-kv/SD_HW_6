@@ -3,7 +3,7 @@ package Tokens;
 import Visitors.TokenVisitor;
 
 public class Operation implements Token {
-    enum OperationType {ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION};
+    public enum OperationType {ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION};
 
     private final OperationType operationType;
 

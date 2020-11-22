@@ -3,7 +3,7 @@ package Tokens;
 import Visitors.TokenVisitor;
 
 public class Brace implements Token {
-    enum BraceType {OPENING, CLOSING};
+    public enum BraceType {OPENING, CLOSING};
 
     private final BraceType braceType;
     public Brace(BraceType braceType) {
